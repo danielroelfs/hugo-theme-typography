@@ -1,0 +1,25 @@
+<div id="nav-border" class="container">
+    {{ if not .IsHome }}
+    <div class="nav-outer">
+        <div class="nav-inner">
+            {{ range .Site.Menus.main }}
+            {{ if ne .Identifier "hide-from-nav" | default true }}
+                <a class="internal" hyphens="none" href="{{ .URL }}">
+                    {{ $text := print .Name | safeHTML }}
+                    {{ $text }}
+                </a>
+            {{ end }}
+            {{ end }}
+        </div>
+    </nav>
+    {{ else }}
+    <div class="nav-outer">
+        <div class="nav-inner"></div>
+    </nav>
+    {{ end }}
+</div>
+
+{{ range .Site.Params.customjs }}
+    {{ $script := resources.Get . | minify }}
+    <script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{ end }}

@@ -1,0 +1,479 @@
+@media all {html {font-size: 23px;}}
+@media all and (max-width: 1600px){html {font-size: 24px;}}
+@media all and (max-width: 1000px){html {font-size: 23px;}}
+@media all and (max-width: 880px){html {font-size: 22px;}}
+@media all and (max-width: 800px){html {font-size: 21px;}}
+@media all and (max-width: 600px){html {font-size: 20px;}}
+@media all and (max-width: 480px){html {font-size: 19px;}}
+
+/* General */
+html {
+  height: 100%;
+}
+
+@media all and (max-width: 800px) {
+  html {
+    height: 100%;
+  }
+}
+
+body {
+  position: relative;
+  max-width: 1000px;
+  min-width: 800px;
+  width: 100%;
+  min-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #444;
+  padding: 0;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+@media all and (max-width: 800px) {
+  body {
+    min-width: auto;
+  }
+}
+
+body > * {
+  font-family: "source-serif-4", serif;
+  font-size: 90%;
+  font-weight: 500;
+  font-style: normal;
+  margin-left: 11rem;
+  margin-right: 2.5rem;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+#content {
+  width: 29rem;
+  padding: 3rem 0 8rem 0; 
+}
+
+@media all and (max-width: 800px) {
+  div#content {
+      width: 80%;
+      margin: 1.5rem;
+      margin-top: 0;
+      padding: 1rem 0 3rem 0; 
+    }
+}
+
+p {
+  line-height: 1.42em;
+  margin-bottom: 1em;
+}
+
+/* Headers */
+h1, h2, h3 {
+  font-family: 'Cooper Hewitt', sans-serif;
+  font-weight: 711;
+  font-variant-caps: all-small-caps;
+}
+
+h4, h5, h6 {
+  font-weight: 711;
+  font-size: 80%;
+}
+
+h5 {
+  font-weight: normal;
+}
+
+h6 {
+  font-weight: normal;
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 711;
+  line-height: 1.1;
+}
+
+h2 {
+  font-weight: 711;
+}
+
+h2.article-title {
+  font-weight: 711;
+  text-transform: uppercase;
+  font-variant-caps: normal;
+  line-height: 1.1;
+  font-size: 1.7rem;
+  letter-spacing: 0.07rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+h3.list {
+  font-weight: 711;
+  margin-top: 0.5rem;
+}
+
+#doc h1, h2, h3 {
+  font-weight: 711;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Annotations */
+.hanging-subtitle, .sidenote {
+  position: absolute;
+  left: 2rem;
+  width: 7rem;
+  float: left;
+  text-align: right;
+}
+
+@media all and (max-width: 800px) {
+  .hanging-subtitle, .sidenote {
+    visibility: hidden;
+  }
+}
+
+.hanging-subtitle p {
+  font-style: normal;
+  font-weight: 711;
+  font-size: 95%;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+
+.sidenote {
+  font-size: 82%; 
+  margin-bottom: 1rem;
+  line-height: 1.35;
+  color: #666;
+}
+
+.sidenote.list {
+  margin-bottom: 0;
+}
+
+/* Links */
+a {
+  opacity: 80%;
+  border-radius: 3px;
+  text-decoration: none;
+  color: inherit;
+  padding: 2px;
+}
+
+a:hover {
+  opacity: 100%;
+  background: rgba(166, 140, 145, 0.5);
+  border-radius: 3px;
+}
+
+a, a:hover {
+  transition: background 0.5s;
+}
+
+p a:after, .sidenote a:after  {
+  position: relative;
+  content: "°";
+  font-size: 90%;
+  color: rgb(166, 140, 145);
+  margin-left: 0.10em;
+  top: -0.10em;
+}
+
+a.internal {
+  font-family: 'Cooper Hewitt', sans-serif;
+  font-weight: 711;
+}
+
+.social-icons a:hover {
+  opacity: 100%;
+  color: rgb(166, 140, 145);
+  background: none;
+  transition: color 0.2s;
+}
+
+/* Images and iframes */
+figure {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+img {
+  width: 95%;
+}
+
+figcaption {
+  font-size: 70%;
+  color: #666;
+  text-align: right;
+  margin-right: 2.5%;
+}
+
+iframe {
+  display: block;
+  margin: auto;
+  padding-bottom: 1em;
+}
+
+/* Lists */
+ol {
+  counter-reset: item; 
+  margin: 0; 
+}
+
+ol li, ul li {
+  counter-increment: item; 
+  list-style: none; 
+  margin: 0;
+}
+
+ol li:before {
+  display: block;
+  float: left;
+  content :counter(item);
+  margin-right: 1.15rem;
+}
+
+ul li:before {
+  display: block;
+  float: left;
+  content: "-";
+  margin-right: 1.15rem;
+}
+
+ol li p, ul li p {
+  margin-left: 2.5em;
+}
+
+/* Tables */
+table {
+  font-size: 85%;
+  margin: auto auto 1.5rem auto;
+  border-collapse: collapse;
+  width: 90%;
+  border-bottom: 1px solid #808080;
+}
+
+table a {
+  border: 0;
+}
+
+tr + tr { 
+  border-top: none;
+}
+td + td { 
+  border-left: none;
+}
+
+td {
+  padding: 0.4em;
+  text-align: center;
+}
+
+th {
+  font-family: 'Cooper Hewitt', sans-serif;
+  font-weight: 711;
+  font-size: 115%;
+  font-variant-caps: all-small-caps;
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  line-height: 1.05;
+  border-bottom: 1px solid #808080;
+}
+
+/* Blockquotes */
+blockquote {
+  font-size: 0.8em;
+  font-style: italic;
+  line-height: 1rem;
+  margin: 1.5rem 2rem 0.5rem 2rem;
+}
+
+.quotesource {
+  display: block;
+  font-size: 0.6em;
+  text-align: right;
+  margin-bottom: 1rem;
+  margin-right: 2.5rem;
+}
+
+/* Code */
+code {
+  font-family: 'Source Code', monospace;
+  font-size: 90%;
+}
+
+pre {
+  white-space: pre;
+}
+
+pre code {
+  font-size: 80%;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+/* Decorations */
+.center {
+  margin: auto;
+  text-align: center;
+}
+
+mark {
+  background-color: rgba(166, 140, 145, 0.25);
+}
+
+.signature {
+  display: block;
+  margin-top: 1.5rem;
+  text-align: right;
+  font-variant-caps: all-small-caps;
+}
+
+.signature:before {
+  content: "— ";
+}
+
+.signature .datestamp {
+  font-size: 80%;
+  font-variant: none;
+  text-transform: lowercase;
+  padding: 0;
+  margin: 0;
+}
+
+.ps {
+  font-size: 80%;
+  font-style: italic;
+  opacity: 80%;
+  margin-top: 2rem;
+}
+
+.ps:before {
+  content: "P.S.";
+  margin-right: 1rem;
+}
+
+.omission {
+  height: 0.2rem;
+  border-bottom: 1px dashed #808080;
+  margin-bottom: 0.8rem;
+}
+
+.fin {
+  font-size: 80%;
+}
+
+.os {
+  font-family: 'Cooper Hewitt', sans-serif;
+  font-weight: 711;
+  font-variant-caps: all-small-caps;
+}
+
+.os:after {
+  content: " | ";
+}
+
+.intro-text {
+  margin-top: 1rem;
+}
+
+details {
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+details summary {
+  margin-left: -2rem;
+}
+
+#top-stripe {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 2rem;
+  width: 38rem;
+  border-bottom: 0.2rem solid #444;
+}
+
+@media all and (max-width: 800px) {
+  #top-stripe {
+    width: 100%;
+    left: 0;
+  }
+}
+
+kbd {
+  font-size: 90%;
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #808080;
+  padding: 1px 2px;
+}
+
+/* Navbar at the bottom */
+.nav-outer, .nav-inner {
+  margin: 0;
+  padding: 0;
+}
+
+@media all and (max-width: 800px) {
+  .nav-outer {
+    padding-top: 2rem;
+  }
+}
+
+.nav-inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  position: absolute;
+  left: 2rem;
+  bottom: 0;
+  width: 38rem;
+  opacity: 0.95;
+  border-top: 0.2rem solid #444;
+}
+
+@media all and (max-width: 800px) {
+  .nav-inner {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+
+.nav-flex {
+  width: 100%;
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 711;
+}
+
+.nav-inner a.internal {
+  display: block;
+  height: 2rem;
+  width: 100%;
+  font-size: 75%;
+  text-transform: uppercase;
+  text-align: center;
+  box-sizing: content-box;
+  padding: 0.4rem;
+  padding-bottom: 0.6rem;
+  border-radius: 0;
+}
+
+.nav-inner a.internal:hover {
+  background-color: rgba(166, 140, 145, 0.5);
+  transition: opacity 0.5s;
+  border-radius: 0;
+}

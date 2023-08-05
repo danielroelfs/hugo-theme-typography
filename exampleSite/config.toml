@@ -1,0 +1,52 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'typography'
+theme = "hugo-theme-typography"
+
+[params]
+  introtag  = "introduction"  # sidenote at the top of the page
+  intro     = "A simple and minimalist Hugo theme that focuses on typography and legibility. Feel free to explore this demo to see the design elements and features included."   # short introduction on the home page
+
+  favicon   = "favicon.png"
+
+  # customcss = ["foo.css"] # include custom css files placed under assets/
+  # customjs  = ["foo.js"]  # include custom JavaScript files placed under assets/
+
+  [[params.social]]
+    url   = "https://github.com"    # link to your page
+    icon  = "github"                # name of the feather icon to use, see feathericons.com for the full list
+  [[params.social]]
+    url   = "https://twitter.com/"
+    icon  = "twitter"
+  [[params.social]]
+    url   = "https://instagram.com/"
+    icon  = "instagram"
+  [[params.social]]
+    url   = "https://linkedin.com/"
+    icon  = "linkedin"
+  [[params.social]]
+    url   = "mailto:youremail@email.com"
+    icon  = "at-sign"
+  [[params.social]]
+    url   = "https://mastodon.social/"
+    icon  = "link"
+    html_attributes = "rel=\"me\""  # add rel attribute for Mastodon profile link verification
+
+[menu]
+  [[menu.main]]
+    name        = "Home"
+    url         = "/"
+    weight      = 1
+  [[menu.main]]
+    name        = "Blog"
+    url         = "/blog/"
+    weight      = 2
+  [[menu.main]]
+    name        = "About"
+    url         = "/about/"
+    weight      = 3
+  [[menu.main]]
+    name        = "Contact"
+    url         = "/contact/"
+    weight      = 3
+    identifier  = "hide-from-nav"

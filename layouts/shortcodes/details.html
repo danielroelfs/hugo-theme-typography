@@ -1,0 +1,6 @@
+<details>
+    <summary>
+        {{ .Get 0 | default "click to open"}}
+    </summary>
+    {{ .Inner | markdownify }}
+</details>
