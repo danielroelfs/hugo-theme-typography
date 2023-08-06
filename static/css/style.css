@@ -55,7 +55,7 @@ body > * {
 
 #content {
   width: 29rem;
-  padding: 3rem 0; 
+  padding: 3rem 0;
 }
 
 @media all and (max-width: 800px) {
@@ -63,7 +63,7 @@ body > * {
       width: 80%;
       margin: 1.5rem;
       margin-top: 0;
-      padding: 1rem 0; 
+      padding: 3rem 0;
     }
 }
 
@@ -425,18 +425,18 @@ kbd {
 
 @media all and (max-width: 800px) {
   .nav-outer {
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
 }
 
 .nav-inner {
+  position: absolute;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  position: absolute;
   left: 2rem;
   bottom: 0;
   width: 38rem;
