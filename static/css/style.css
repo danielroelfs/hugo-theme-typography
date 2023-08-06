@@ -55,7 +55,7 @@ body > * {
 
 #content {
   width: 29rem;
-  padding: 3rem 0 8rem 0; 
+  padding: 3rem 0; 
 }
 
 @media all and (max-width: 800px) {
@@ -63,7 +63,7 @@ body > * {
       width: 80%;
       margin: 1.5rem;
       margin-top: 0;
-      padding: 1rem 0 3rem 0; 
+      padding: 1rem 0; 
     }
 }
 
