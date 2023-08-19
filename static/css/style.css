@@ -136,7 +136,13 @@ h3.list {
 
 @media all and (max-width: 800px) {
   .hanging-subtitle, .sidenote {
-    visibility: hidden;
+    position: relative;
+    display: block;
+    font-size: 90%;
+    left: 0;
+    width: 100%;
+    float: initial;
+    text-align: initial;
   }
 }
 
@@ -153,6 +159,15 @@ h3.list {
   margin-bottom: 1rem;
   line-height: 1.35;
   color: #666;
+}
+
+@media all and (max-width: 800px) {
+  .sidenote {
+    color: grey;
+    padding: 1rem 0.5rem 1rem 1rem;
+    border: 1px dashed grey;
+    border-radius: 5px;
+  }
 }
 
 .sidenote.list {
