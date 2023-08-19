@@ -40,6 +40,7 @@ jobs:
           cd exampleSite
           hugo --themesDir ../.. -d ../docs/ --logLevel info -b https://danielroelfs.github.io/hugo-theme-typography
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
+          name: test-build
           path: ./docs
