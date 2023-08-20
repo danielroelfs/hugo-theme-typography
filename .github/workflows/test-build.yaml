@@ -36,7 +36,7 @@ jobs:
       - name: 🍳 Build site
         run: |
           cd exampleSite
-          hugo --themesDir ../.. -d ../docs/ --logLevel info -b ../..
+          hugo --themesDir ../.. -d ../docs/ --logLevel info -b ./
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
