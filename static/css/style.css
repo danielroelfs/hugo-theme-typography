@@ -67,6 +67,10 @@ body > * {
     }
 }
 
+#doc {
+  padding-bottom: 1rem;
+}
+
 p {
   line-height: 1.42em;
   margin-bottom: 1em;
@@ -132,6 +136,10 @@ h3.list {
   width: 7rem;
   float: left;
   text-align: right;
+}
+
+#doc > .hanging-subtitle p:first-child {
+  border-top: 3px solid #333;
 }
 
 @media all and (max-width: 800px) {
