@@ -275,6 +275,10 @@ ol li p, ul li p {
   margin-left: 2.5em;
 }
 
+ul, ol {
+  padding-bottom: 0.5rem;
+}
+
 /* Tables */
 table {
   font-size: 85%;
