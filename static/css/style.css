@@ -223,7 +223,7 @@ a.internal {
 }
 
 .social-icons img {
-  width: initial;
+  width: auto;
   padding: 0 5px;
 }
 
