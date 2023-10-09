@@ -28,6 +28,10 @@
             <link rel="shortcut icon" href="{{ . | relURL }}">
         {{ end }}
     {{ end }}
+
+    {{ if .Site.IsServer }}
+        <script async src="{{ .Site.Params.umamilink }}" data-website-id="{{ .Site.Params.umamiid }}"></script>
+    {{ end }}
     
     {{ $title := print .Title " | " .Site.Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}

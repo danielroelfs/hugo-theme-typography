@@ -9,10 +9,13 @@ theme = "hugo-theme-typography"
 
   favicon   = "favicon.png"
 
-  iconsource  = "feather" # Source of the icon font (defaults to feather, options: simple-icons, feather, fontawesome)
+  iconsource  = "feather" # source of the icon font (defaults to feather, options: simple-icons, feather, fontawesome)
 
   # customcss = ["foo.css"] # include custom css files placed under assets/
   # customjs  = ["foo.js"]  # include custom JavaScript files placed under assets/
+
+  umamilink   = "https://analytics.example.com/umami.js"
+  umamiid     = "1234567-abcd-efgh-0000-abcdefg1234"
 
   [[params.social]]
     url     = "https://github.com"    # link to your page
