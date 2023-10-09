@@ -17,10 +17,24 @@
 <div style="height: 2.5rem;"></div>
 <div class="sidenote">socials</div>
 <div class="social-icons" style="margin-top: 0.5rem;">
-    {{ range .Site.Params.social }}
-        <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
-          <i data-feather="{{ .icon }}" style="margin-right: 0.5rem;"></i>
-        </a>
+    {{ if eq .Site.Params.iconsource "simple-icons" }}
+        {{ range .Site.Params.social }}
+            <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
+                <img class="icon" height="28" width="28" src="https://cdn.simpleicons.org/{{ .icon }}/444"/>
+            </a>
+        {{ end }}
+    {{ else if eq .Site.Params.iconsource "fontawesome" }}
+        {{ range .Site.Params.social }}
+            <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
+                <i class="{{ .icon }}"></i>
+            </a>
+        {{ end }}
+    {{ else }}
+        {{ range .Site.Params.social }}
+            <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
+                <i data-feather="{{ .icon }}" style="margin-right: 0.5rem;"></i>
+            </a>
+        {{ end }}
     {{ end }}
 </div>
 {{ end }}
