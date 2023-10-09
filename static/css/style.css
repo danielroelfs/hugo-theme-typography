@@ -11,7 +11,7 @@ html {
   height: 100%;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1200px) {
   html {
     height: 100%;
   }
@@ -20,7 +20,7 @@ html {
 body {
   position: relative;
   max-width: 1000px;
-  min-width: 800px;
+  min-width: 1200px;
   width: 100%;
   min-height: 100%;
   margin-left: auto;
@@ -30,7 +30,7 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1200px) {
   body {
     min-width: auto;
   }
@@ -58,7 +58,7 @@ body > * {
   padding: 3rem 0;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1200px) {
   div#content {
       width: 80%;
       margin: 1.5rem;
@@ -142,7 +142,7 @@ h3.list {
   border-top: 3px solid #333;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1200px) {
   .hanging-subtitle, .sidenote {
     position: relative;
     display: block;
@@ -169,17 +169,17 @@ h3.list {
   color: #666;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1200px) {
   .sidenote {
     color: grey;
-    padding: 1rem 0.5rem 1rem 1rem;
+    padding: 1rem 0.5rem 0 0;
+  }
+
+  #doc .sidenote {
+    padding: 0.5rem 0.5rem 0.5rem 0.75rem;
     border: 1px dashed grey;
     border-radius: 5px;
   }
-}
-
-.sidenote.list {
-  margin-bottom: 0;
 }
 
 /* Links */
@@ -434,7 +434,7 @@ details summary {
   border-bottom: 0.2rem solid #444;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1200px) {
   #top-stripe {
     width: 100%;
     left: 0;
@@ -491,7 +491,7 @@ kbd {
   padding: 0;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1200px) {
   .nav-outer {
     padding-top: 1rem;
   }
@@ -512,7 +512,7 @@ kbd {
   border-top: 0.2rem solid #444;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1200px) {
   .nav-inner {
     width: 100%;
     left: 0;
