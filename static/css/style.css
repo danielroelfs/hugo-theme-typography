@@ -223,7 +223,7 @@ a.internal {
 }
 
 img.icon {
-  width: auto;
+  width: initial;
   padding: 0 5px;
 }
 
