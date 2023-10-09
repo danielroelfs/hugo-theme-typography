@@ -20,7 +20,7 @@ html {
 body {
   position: relative;
   max-width: 1000px;
-  min-width: 1200px;
+  min-width: 800px;
   width: 100%;
   min-height: 100%;
   margin-left: auto;
@@ -179,6 +179,11 @@ h3.list {
     padding: 0.5rem 0.5rem 0.5rem 0.75rem;
     border: 1px dashed grey;
     border-radius: 5px;
+  }
+
+  #doc .sidenote:has(img) {
+    border: none;
+    max-width: 30vw;
   }
 }
 
