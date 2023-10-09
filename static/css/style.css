@@ -222,7 +222,7 @@ a.internal {
   transition: color 0.2s;
 }
 
-.social-icons img {
+img.icon {
   width: auto;
   padding: 0 5px;
 }
