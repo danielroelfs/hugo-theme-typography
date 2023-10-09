@@ -29,7 +29,7 @@
         {{ end }}
     {{ end }}
 
-    {{ if .Site.IsServer }}
+    {{ if not .Site.IsServer }}
         <script async src="{{ .Site.Params.umamilink }}" data-website-id="{{ .Site.Params.umamiid }}"></script>
     {{ end }}
     
