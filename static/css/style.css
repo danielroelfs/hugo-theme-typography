@@ -222,6 +222,11 @@ a.internal {
   transition: color 0.2s;
 }
 
+.social-icons img {
+  width: initial;
+  padding: 0 5px;
+}
+
 /* Images and iframes */
 figure {
   text-align: center;
@@ -243,11 +248,6 @@ iframe {
   display: block;
   margin: auto;
   padding-bottom: 1em;
-}
-
-img.icon {
-  width: initial;
-  padding: 0 5px;
 }
 
 /* Lists */
