@@ -1,6 +1,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+    <meta name="description" content="{{ if .IsPage }}{{ .Site.BaseURL }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
     
     {{ $stylesheet := "css/style.css" }}
     <link rel="stylesheet" type="text/css" href="{{ $stylesheet | absURL }}">
