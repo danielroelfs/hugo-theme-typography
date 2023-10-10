@@ -2,13 +2,15 @@
     {{ if not .IsHome }}
     <div class="nav-outer">
         <div class="nav-inner">
-            {{ range .Site.Menus.main }}
-            {{ if ne .Identifier "hide-from-nav" | default true }}
-                <a class="internal" hyphens="none" href="{{ .URL }}">
-                    {{ $text := print .Name | safeHTML }}
-                    {{ $text }}
-                </a>
-            {{ end }}
+            {{ with .Site.Menus.main }}
+                {{ range sort . "Weight" }}
+                    {{ if ne .Identifier "hide-from-nav" }}
+                        <a class="internal" hyphens="none" href="{{ .URL }}">
+                            {{ $text := print .Name | safeHTML }}
+                            {{ $text }}
+                        </a>
+                    {{ end }}
+                {{ end }}
             {{ end }}
         </div>
     </div>

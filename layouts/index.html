@@ -9,9 +9,11 @@
     <div style="height: 2.5rem;"></div>
 {{ end }}
 <div class="sidenote" style="margin-top: 0.5rem;">pages</div>
-{{ range .Site.Menus.main }}
-    {{- if ne .Name "Home" -}}
-    <h3 class="list"><a class="title" href="{{ .URL }}">{{ .Name | lower | markdownify }}</a></h3>
+{{ with .Site.Menus.main }}
+    {{ range sort . "Weight" }}
+        {{ if ne .Name "Home" }}
+            <h3 class="list"><a class="title" href="{{ .URL }}">{{ .Name | lower | markdownify }}</a></h3>
+        {{ end }}
     {{ end }}
 {{ end }}
 <div style="height: 2.5rem;"></div>
