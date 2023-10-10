@@ -14,6 +14,7 @@ theme = "hugo-theme-typography"
   # customcss = ["foo.css"] # include custom css files placed under assets/
   # customjs  = ["foo.js"]  # include custom JavaScript files placed under assets/
 
+  umami       = true
   umamilink   = "https://analytics.example.com/umami.js"
   umamiid     = "1234567-abcd-efgh-0000-abcdefg1234"
 
