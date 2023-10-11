@@ -7,6 +7,8 @@ theme = "hugo-theme-typography"
   introtag  = "introduction"  # sidenote at the top of the page
   intro     = "A simple and minimalist Hugo theme that focuses on typography and legibility. Feel free to explore this demo to see the design elements and features included."   # short introduction on the home page
 
+  description = "A typography-oriented Hugo theme"
+
   favicon   = "favicon.png"
 
   iconsource  = "feather" # source of the icon font (defaults to feather, options: simple-icons, feather, fontawesome)
