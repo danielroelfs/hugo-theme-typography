@@ -1,4 +1,11 @@
 {{ define "main" }}
+{{ if not .Params.hidetopnav | default false }}
+    <div class="article-nav-outer">
+        <div class="article-nav-inner">
+            <a class="internal" hyphens="none" href="/blog">← back to blog</a>
+        </div>
+    </div>
+{{ end }}
 <h2 class="article-title">{{ .Title | markdownify }}</h2>
 <div id="doc">
     <div class="hanging-subtitle">

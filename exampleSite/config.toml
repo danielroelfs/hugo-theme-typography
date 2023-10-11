@@ -7,46 +7,62 @@ theme = "hugo-theme-typography"
   introtag  = "introduction"  # sidenote at the top of the page
   intro     = "A simple and minimalist Hugo theme that focuses on typography and legibility. Feel free to explore this demo to see the design elements and features included."   # short introduction on the home page
 
+  description = "A typography-oriented Hugo theme"
+
   favicon   = "favicon.png"
+
+  iconsource  = "feather" # source of the icon font (defaults to feather, options: simple-icons, feather, fontawesome)
 
   # customcss = ["foo.css"] # include custom css files placed under assets/
   # customjs  = ["foo.js"]  # include custom JavaScript files placed under assets/
 
+  umami       = true
+  umamilink   = "https://analytics.example.com/umami.js"
+  umamiid     = "1234567-abcd-efgh-0000-abcdefg1234"
+
   [[params.social]]
-    url   = "https://github.com"    # link to your page
-    icon  = "github"                # name of the feather icon to use, see feathericons.com for the full list
+    url     = "https://github.com"    # link to your page
+    icon    = "github"                # name of the icon to use, see feathericons.com, simpleicons.org, or fontawesome.com for the full list
+    weight  = 1
   [[params.social]]
-    url   = "https://twitter.com/"
-    icon  = "twitter"
+    url     = "https://twitter.com/"
+    icon    = "x"
+    weight  = 2
   [[params.social]]
-    url   = "https://instagram.com/"
-    icon  = "instagram"
+    url     = "https://instagram.com/"
+    icon    = "instagram"
+    weight  = 3
   [[params.social]]
-    url   = "https://linkedin.com/"
-    icon  = "linkedin"
+    url     = "https://linkedin.com/"
+    icon    = "linkedin"
+    weight  = 4
   [[params.social]]
-    url   = "mailto:youremail@email.com"
-    icon  = "at-sign"
+    url     = "mailto:youremail@email.com"
+    icon    = "at-sign"
+    weight  = 5
   [[params.social]]
-    url   = "https://mastodon.social/"
-    icon  = "link"
+    url     = "https://mastodon.social/"
+    icon    = "link"
+    weight  = 7
     html_attributes = "rel=\"me\""  # add rel attribute for Mastodon profile link verification
 
 [menu]
-  [[menu.main]]
-    name        = "Home"
-    url         = "/"
-    weight      = 1
-  [[menu.main]]
-    name        = "Blog"
-    url         = "/blog/"
-    weight      = 2
-  [[menu.main]]
-    name        = "About"
-    url         = "/about/"
-    weight      = 3
-  [[menu.main]]
-    name        = "Contact"
-    url         = "/contact/"
-    weight      = 3
-    identifier  = "hide-from-nav"
+    [[menu.main]]
+        name = "Home"
+        url  = "/"
+        weight = 1
+    [[menu.main]]
+        name = "Blog"
+        url  = "/blog"
+        weight = 2
+    [[menu.main]]
+        name = "About"
+        url = "/about"
+        weight = 3
+    [[menu.main]]
+        name = "Contact"
+        url = "/contact"
+        weight = 4
+        identifier = "hide-from-nav"
+
+

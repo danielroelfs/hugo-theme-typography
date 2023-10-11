@@ -1,14 +1,9 @@
-name: Build and deploy exampleSite
+name: Test build
 
 on:
   push:
-    branches:
-      - main
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches:    
+      - dev
 
 jobs:
   build:
@@ -19,13 +14,11 @@ jobs:
       HUGO_VERSION: 0.116.1
 
     steps:
-      - name: 🛎 Check out main
+      - name: 🛎 Check out repo
         uses: actions/checkout@v3
         with:
+          ref: dev
           fetch-depth: 1
-      - name: 🔧 Setup Pages
-        id: pages
-        uses: actions/configure-pages@v3
       - name: Use Node.js
         uses: actions/setup-node@master
         with:
@@ -43,20 +36,9 @@ jobs:
       - name: 🍳 Build site
         run: |
           cd exampleSite
-          hugo --themesDir ../.. -d ../docs/ --logLevel info -b https://danielroelfs.github.io/hugo-theme-typography
+          hugo --themesDir ../.. -d ../docs/ --logLevel info -b ./
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
+          name: test-build
           path: ./docs
-  
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: 🚀 Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
