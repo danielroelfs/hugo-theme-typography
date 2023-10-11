@@ -16,7 +16,6 @@
     <meta name="twitter:site" content="{{ .Permalink }}">
     <meta name="twitter:image" content="{{ if .IsPage }}{{ .Site.BaseURL }}{{ .Params.thumbnail }}{{ else }}{{ .Site.BaseURL }}{{ .Site.Params.favicon }}{{ end }}">
 
-    
     {{ $stylesheet := "css/style.css" }}
     <link rel="stylesheet" type="text/css" href="{{ $stylesheet | absURL }}">
     
