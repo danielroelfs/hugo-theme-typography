@@ -49,7 +49,7 @@ body > * {
 
 #content {
   width: 29rem;
-  padding: 3rem 0 4rem 0;
+  padding: 3rem 0 5rem 0;
 }
 
 @media all and (max-width: 1200px) {
