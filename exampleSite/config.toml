@@ -11,6 +11,8 @@ theme = "hugo-theme-typography"
 
   favicon   = "favicon.png"
 
+  highlightstyle  = "foundation" # Style for highlight.js
+
   iconsource  = "feather" # source of the icon font (defaults to feather, options: simple-icons, feather, fontawesome)
 
   # customcss = ["foo.css"] # include custom css files placed under assets/
