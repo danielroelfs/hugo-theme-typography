@@ -5,7 +5,7 @@ date: "" # If a date isn't provided, then it'll show in the list as "no date"
 
 Mathematical notation is activated by default in the _typography_ theme.
 
-The integration is provided using [MathJax](https://www.mathjax.org). In-line math typesetting isn't quite in place yet, but it's work in progress.
+The integration is provided using [MathJax](https://www.mathjax.org). Here's some inline math: $y = ax^2+bx+c$.
 
 ### Examples
 
