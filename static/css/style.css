@@ -411,6 +411,12 @@ mark {
   content: " | ";
 }
 
+.stand-out-paragraph {
+  border-radius: 5px;
+  background-color: #EBEBEB;
+  padding: 1em;
+}
+
 .intro-text {
   margin-top: 1rem;
 }
