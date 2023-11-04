@@ -170,7 +170,7 @@ h3.list {
   }
 
   #doc .sidenote {
-    padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.75rem !important;
     border: 1px dashed grey;
     border-radius: 5px;
   }
@@ -471,6 +471,14 @@ kbd {
   align-content: center;
   align-items: center;
   opacity: 0.9;
+}
+
+@media all and (max-width: 1200px) {
+  .article-nav-outer {
+    width: 90vw;
+    left: 0;
+    margin-left: 0;
+  }
 }
 
 .article-nav-inner a.internal {
