@@ -360,6 +360,15 @@ mark {
   background-color: rgba(166, 140, 145, 0.25);
 }
 
+.xref {
+  font-variant-caps: all-small-caps;
+  font-size: 1rem;
+}
+
+a.xref:after {
+  content: none;
+}
+
 .signature {
   display: block;
   margin-top: 1.5rem;

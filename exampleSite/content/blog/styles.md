@@ -10,6 +10,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Quisque egestas diam in arcu cursus euismod quis viverra nibh. Amet cursus sit amet dictum sit amet justo donec enim. Urna molestie at elementum eu facilisis sed odio morbi. Aliquet lectus proin nibh nisl condimentum id.
 
+See the {{< xref text="Blockquote" link="#blockquote" >}} section.
+
 ## Header 3
 
 Vitae nunc sed velit dignissim sodales ut eu. Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Etiam sit amet nisl purus.
