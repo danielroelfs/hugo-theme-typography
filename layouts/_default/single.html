@@ -2,7 +2,7 @@
 {{ if not .Params.hidetopnav | default false }}
     <div class="article-nav-outer">
         <div class="article-nav-inner">
-            <a class="internal" hyphens="none" href="/blog">← back to blog</a>
+            <a class="internal" hyphens="none" href='/{{ .Site.Params.blogname | default "blog" }}'>← back to {{ .Site.Params.blogname | default "blog" }}</a>
         </div>
     </div>
 {{ end }}

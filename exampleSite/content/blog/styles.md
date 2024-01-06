@@ -10,6 +10,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Quisque egestas diam in arcu cursus euismod quis viverra nibh. Amet cursus sit amet dictum sit amet justo donec enim. Urna molestie at elementum eu facilisis sed odio morbi. Aliquet lectus proin nibh nisl condimentum id.
 
+See the {{< xref text="Blockquote" link="#blockquote" >}} section.
+
 ## Header 3
 
 Vitae nunc sed velit dignissim sodales ut eu. Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Etiam sit amet nisl purus.
@@ -69,10 +71,18 @@ raco pollen start . 8081
 ## Blockquote
 
 {{< sidenote >}}
-Nullam ac tortor vitae purus faucibus ornare suspendisse sed. Aliquet enim tortor at auctor urna. **Purus gravida** quis blandit turpis cursus in hac habitasse platea. Massa ultricies mi quis hendrerit dolor magna. Eget nunc lobortis mattis aliquam faucibus purus in.
+Nullam ac tortor vitae purus faucibus ornare suspendisse sed. Aliquet enim tortor at auctor urna. **Purus gravida** quis blandit turpis cursus in hac habitasse platea.
 {{< /sidenote >}}
 
+Quam elementum pulvinar etiam non quam lacus. Elit eget gravida cum sociis natoque penatibus et. Sapien eget mi proin sed libero enim. Convallis posuere morbi leo urna molestie. Sit amet mattis vulputate enim nulla aliquet porttitor. Tincidunt dui ut ornare lectus sit amet est placerat in. Fermentum posuere urna nec tincidunt praesent semper feugiat. Aliquet sagittis id consectetur purus. Bibendum enim facilisis gravida neque convallis a. Pretium lectus quam id leo in. Sapien faucibus et molestie ac feugiat sed lectus. Cursus in hac habitasse platea dictumst.
+
+{{< sidenote >}}
+This is a stand-out paragraph
+{{< /sidenote >}}
+
+{{< standout bg="#CCCCCC" >}}
 Potenti nullam ac tortor vitae purus faucibus ornare suspendisse. Tincidunt eget nullam non nisi est. Amet porttitor eget dolor morbi. Diam quam nulla porttitor massa id neque aliquam. Sed felis eget velit aliquet sagittis id consectetur purus.
+{{< /standout >}}
 
 {{< quote source="Some Roman person (c. 1955 - c. 1985 AD)" >}}
 Porta nibh venenatis cras sed. Quisque sagittis purus sit amet volutpat consequat. Lacinia quis vel eros donec ac odio tempor orci dapibus. Eget sit amet tellus cras adipiscing enim eu turpis.
