@@ -26,6 +26,7 @@ body {
 
 @media all and (max-width: 1200px) {
   body {
+    min-width: auto;
     max-width: 100vw;
   }
 }
@@ -49,7 +50,7 @@ body > * {
 
 #content {
   width: 29rem;
-  padding: 3rem 0;
+  padding: 3rem 0 4rem 0;
 }
 
 @media all and (max-width: 1200px) {
@@ -97,6 +98,12 @@ h1 {
   line-height: 1.1;
 }
 
+@media all and (max-width: 1200px) {
+  h1 {
+    font-size: 1.5rem
+  }
+}
+
 h2 {
   font-weight: 711;
 }
@@ -112,6 +119,14 @@ h2.article-title {
   margin-bottom: 4rem;
 }
 
+@media all and (max-width: 1200px) {
+  h2.article-title {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+
 h3.list {
   font-weight: 711;
   margin-top: 0.5rem;
@@ -121,6 +136,12 @@ h3.list {
   font-weight: 711;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
+}
+
+@media all and (max-width: 1200px) {
+  #doc h1, h2, h3 {
+    font-size: 1.2rem
+  }
 }
 
 /* Annotations */
@@ -170,7 +191,7 @@ h3.list {
   }
 
   #doc .sidenote {
-    padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.75rem !important;
     border: 1px dashed grey;
     border-radius: 5px;
   }
@@ -360,6 +381,15 @@ mark {
   background-color: rgba(166, 140, 145, 0.25);
 }
 
+.xref {
+  font-variant-caps: all-small-caps;
+  font-size: 1rem;
+}
+
+a.xref:after {
+  content: none;
+}
+
 .signature {
   display: block;
   margin-top: 1.5rem;
@@ -409,6 +439,12 @@ mark {
 
 .os:after {
   content: " | ";
+}
+
+.stand-out-paragraph {
+  border-radius: 5px;
+  background-color: #EBEBEB;
+  padding: 1em;
 }
 
 .intro-text {
@@ -465,6 +501,14 @@ kbd {
   align-content: center;
   align-items: center;
   opacity: 0.9;
+}
+
+@media all and (max-width: 1200px) {
+  .article-nav-outer {
+    width: 90vw;
+    left: 0;
+    margin-left: 0;
+  }
 }
 
 .article-nav-inner a.internal {
