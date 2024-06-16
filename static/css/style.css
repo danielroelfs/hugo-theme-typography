@@ -334,7 +334,7 @@ th {
   font-weight: 711;
   font-size: 115%;
   font-variant-caps: all-small-caps;
-  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  padding: 0.3rem 0.5rem 0.3rem 0.25rem;
   line-height: 1.05;
   border-bottom: 1px solid #808080;
 }
