@@ -242,6 +242,10 @@ a.internal {
   font-weight: 711;
 }
 
+.social-icons {
+  margin-top: 0.2rem;
+}
+
 .social-icons a:hover {
   opacity: 100%;
   color: rgb(166, 140, 145);

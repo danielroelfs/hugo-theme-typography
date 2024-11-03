@@ -13,7 +13,7 @@ theme = "hugo-theme-typography"
 
   highlightstyle  = "foundation" # Style for highlight.js
 
-  iconsource  = "feather" # source of the icon font (defaults to feather, options: simple-icons, feather, fontawesome)
+  iconsource  = "feather" # source of the icon font (defaults to feather, options: feather, tabler, simple-icons, fontawesome)
 
   # customcss = ["foo.css"] # include custom css files placed under assets/
   # customjs  = ["foo.js"]  # include custom JavaScript files placed under assets/
@@ -24,7 +24,7 @@ theme = "hugo-theme-typography"
 
   [[params.social]]
     url     = "https://github.com"    # link to your page
-    icon    = "github"                # name of the icon to use, see feathericons.com, simpleicons.org, or fontawesome.com for the full list
+    icon    = "github"                # name of the icon to use, see feathericons.com, tabler.io/icons, simpleicons.org, or fontawesome.com for the full list
     weight  = 1
   [[params.social]]
     url     = "https://twitter.com/"

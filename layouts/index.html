@@ -19,7 +19,15 @@
 <div style="height: 2.5rem;"></div>
 <div class="sidenote">socials</div>
 <div class="social-icons">
-    {{ if eq .Site.Params.iconsource "simple-icons" }}
+    {{ if eq .Site.Params.iconsource "tabler" }}
+        {{ with .Site.Params.social }}
+            {{ range sort . "weight" }}
+                <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
+                    <i class="ti ti-{{ .icon }}" style="font-size: 1.1rem; margin-right: 0.5rem;"></i>
+                </a>
+            {{ end }}
+        {{ end }}
+    {{ else if eq .Site.Params.iconsource "simple-icons" }}
         {{ with .Site.Params.social }}
             {{ range sort . "weight" }}
                 <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
@@ -31,7 +39,7 @@
         {{ with .Site.Params.social }}
             {{ range sort . "weight" }}
                 <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
-                    <i class="{{ .icon }}"></i>
+                    <i class="{{ .icon }}" style="font-size: 1.1rem; margin-right: 0.5rem;"></i>
                 </a>
             {{ end }}
         {{ end }}
@@ -39,7 +47,7 @@
         {{ with .Site.Params.social }}
             {{ range sort . "weight" }}
                 <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
-                    <i data-feather="{{ .icon }}" style="margin-right: 0.5rem;margin-top: 0.5rem;"></i>
+                    <i data-feather="{{ .icon }}" style="margin-right: 0.5rem;"></i>
                 </a>
             {{ end }}
         {{ end }}
