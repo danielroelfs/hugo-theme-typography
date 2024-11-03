@@ -1,5 +1,5 @@
 test:
-	hugo --version
+	hugo version
 
 preview:
 	hugo server --source exampleSite --themesDir ../..
