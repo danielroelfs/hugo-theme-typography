@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      HUGO_VERSION: 0.116.1
+      HUGO_VERSION: 0.140.2
 
     steps:
       - name: 🛎 Check out main

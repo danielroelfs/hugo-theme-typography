@@ -41,7 +41,7 @@
         {{ end }}
     {{ end }}
 
-    {{ if and .Site.Params.umami (not .Site.IsServer) }}
+    {{ if and (.Site.Params.umami) (not hugo.IsServer) }}
         <script async src="{{ .Site.Params.umamilink }}" data-website-id="{{ .Site.Params.umamiid }}"></script>
     {{ end }}
     
