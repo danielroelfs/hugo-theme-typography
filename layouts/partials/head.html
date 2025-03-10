@@ -42,7 +42,7 @@
     {{ end }}
 
     {{ if and (.Site.Params.umami) (not hugo.IsServer) }}
-        <script async src="{{ .Site.Params.umamilink }}" data-website-id="{{ .Site.Params.umamiid }}" data-do-not-track=true></script>
+        <script async src="{{ .Site.Params.umamilink }}" data-website-id="{{ .Site.Params.umamiid }}" data-do-not-track="true"></script>
     {{ end }}
     
     {{ $title := print .Title " | " .Site.Title }}
