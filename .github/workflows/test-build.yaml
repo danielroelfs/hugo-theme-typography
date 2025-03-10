@@ -38,7 +38,7 @@ jobs:
           cd exampleSite
           hugo --themesDir ../.. -d ../docs/ --logLevel info -b ./
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-build
           path: ./docs
