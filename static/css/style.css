@@ -111,7 +111,7 @@ h6 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: var(--header-weight);
   line-height: 1.1;
 }
@@ -145,7 +145,7 @@ h3.list {
   display: flex;
   flex-wrap: wrap;
   font-weight: 900;
-  font-size: 85%;
+  font-size: 75%;
   line-height: 1.25rem;
 }
 
