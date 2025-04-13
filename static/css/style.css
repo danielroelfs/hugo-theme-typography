@@ -546,7 +546,6 @@ kbd {
 .article-nav-inner a.internal {
   display: block;
   font-size: 75%;
-  text-transform: uppercase;
   text-align: center;
   box-sizing: content-box;
   padding: 0.2rem;
