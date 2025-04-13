@@ -6,6 +6,12 @@
 @media all and (max-width: 600px){html {font-size: 20px;}}
 @media all and (max-width: 480px){html {font-size: 19px;}}
 
+:root {
+  --body-font: "source-serif-4", serif;
+  --header-font: "neue-frutiger-world", sans-serif;
+  --header-weight: 900;
+}
+
 /* General */
 html {
   height: 100%;
@@ -32,7 +38,7 @@ body {
 }
 
 body > * {
-  font-family: "source-serif-4", serif;
+  font-family: var(--body-font);
   font-size: 85%;
   font-weight: 500;
   font-style: normal;
@@ -73,28 +79,40 @@ p {
 
 /* Headers */
 h1, h2, h3 {
-  font-family: 'Cooper Hewitt', sans-serif;
-  font-weight: 711;
-  font-variant-caps: all-small-caps;
+  font-family: var(--header-font);
+  font-weight: var(--header-weight);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 115%;
+}
+
+h3 {
+  font-size: 90%;
 }
 
 h4, h5, h6 {
-  font-weight: 711;
-  font-size: 80%;
+  font-weight: var(--header-weight);
+  font-size: 95%;
+}
+
+h4 {
+  font-size: 100%;
 }
 
 h5 {
-  font-weight: normal;
+  font-weight: 600;
 }
 
 h6 {
-  font-weight: normal;
+  font-weight: 600;
   font-style: italic;
 }
 
 h1 {
   font-size: 2rem;
-  font-weight: 711;
+  font-weight: var(--header-weight);
   line-height: 1.1;
 }
 
@@ -104,12 +122,8 @@ h1 {
   }
 }
 
-h2 {
-  font-weight: 711;
-}
-
 h2.article-title {
-  font-weight: 711;
+  font-weight: var(--header-weight);
   text-transform: uppercase;
   font-variant-caps: normal;
   line-height: 1.1;
@@ -130,7 +144,9 @@ h2.article-title {
 h3.list {
   display: flex;
   flex-wrap: wrap;
-  font-weight: 711;
+  font-weight: 900;
+  font-size: 85%;
+  line-height: 1.25rem;
 }
 
 h3.list a {
@@ -139,7 +155,7 @@ h3.list a {
 }
 
 #doc h1, h2, h3:not(.list) {
-  font-weight: 711;
+  font-weight: var(--header-weight);
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
@@ -178,7 +194,7 @@ h3.list a {
 
 .hanging-subtitle p {
   font-style: normal;
-  font-weight: 711;
+  font-weight: 900;
   font-size: 95%;
   line-height: 1.2;
   margin-top: 0.25rem;
@@ -238,8 +254,8 @@ p a:after, .sidenote a:after  {
 }
 
 a.internal {
-  font-family: 'Cooper Hewitt', sans-serif;
-  font-weight: 711;
+  font-family: var(--header-font);
+  font-weight: var(--header-weight);
 }
 
 .social-icons {
@@ -341,10 +357,10 @@ td {
 }
 
 th {
-  font-family: 'Cooper Hewitt', sans-serif;
-  font-weight: 711;
-  font-size: 115%;
-  font-variant-caps: all-small-caps;
+  font-family: var(--header-font);
+  font-weight: var(--header-weight);
+  font-size: 80%;
+  text-transform: uppercase;
   padding: 0.3rem 0.5rem 0.3rem 0.25rem;
   line-height: 1.05;
   border-bottom: 1px solid #808080;
@@ -383,6 +399,10 @@ pre code {
 }
 
 /* Decorations */
+.lowercase {
+  text-transform: lowercase;
+}
+
 .center {
   margin: auto;
   text-align: center;
@@ -393,8 +413,8 @@ mark {
 }
 
 .xref {
-  font-variant-caps: all-small-caps;
-  font-size: 1rem;
+  text-transform: uppercase;
+  font-size: 0.7rem;
 }
 
 a.xref:after {
@@ -405,7 +425,7 @@ a.xref:after {
   display: block;
   margin-top: 1.5rem;
   text-align: right;
-  font-variant-caps: all-small-caps;
+  text-transform: lowercase;
 }
 
 .signature:before {
@@ -443,9 +463,10 @@ a.xref:after {
 }
 
 .os {
-  font-family: 'Cooper Hewitt', sans-serif;
-  font-weight: 711;
-  font-variant-caps: all-small-caps;
+  font-family: var(--header-font);
+  font-weight: var(--header-weight);
+  text-transform: uppercase;
+  font-size: 80%;
 }
 
 .os:after {
@@ -577,15 +598,14 @@ kbd {
 .nav-flex {
   width: 100%;
   text-align: center;
-  font-size: 3.5rem;
-  font-weight: 711;
+  font-weight: var(--header-weight);
 }
 
 .nav-inner a.internal {
   display: block;
   height: 2rem;
   width: 100%;
-  font-size: 75%;
+  font-size: 80%;
   text-transform: uppercase;
   text-align: center;
   box-sizing: content-box;
