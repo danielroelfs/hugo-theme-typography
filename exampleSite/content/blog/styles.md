@@ -1,7 +1,7 @@
 ---
 title: "Styles"
 date: 2023-08-01
-author: "the author"
+author: "The Author"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit duis tristique sollicitudin nibh sit. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque. Consequat interdum varius sit amet mattis vulputate enim nulla. Turpis tincidunt id aliquet risus. Vulputate mi sit amet mauris commodo quis imperdiet massa. _Quam viverra orci sagittis eu volutpat odio._ Nunc faucibus a pellentesque sit amet porttitor eget. Adipiscing tristique risus nec feugiat in fermentum posuere urna nec. Nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices. Pellentesque elit eget gravida cum sociis natoque. Ut tristique et egestas quis ipsum suspendisse ultrices.
@@ -12,11 +12,11 @@ Quisque egestas diam in arcu cursus euismod quis viverra nibh. Amet cursus sit a
 
 See the {{< xref text="Blockquote" link="#blockquote" >}} section.
 
-## Header 3
+### Header 3
 
 Vitae nunc sed velit dignissim sodales ut eu. Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Etiam sit amet nisl purus.
 
-### Header 4
+#### Header 4
 
 Interdum velit laoreet id donec ultrices tincidunt arcu non. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel. In pellentesque massa placerat duis ultricies lacus sed turpis tincidunt.
 
