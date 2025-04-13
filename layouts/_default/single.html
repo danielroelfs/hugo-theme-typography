@@ -13,7 +13,7 @@
             <p>{{ .Params.topic }}</p>
         {{ end }}
         {{ if .Params.author }}
-            <p>by {{ .Params.author }}</p>
+            <p class="lowercase">by {{ .Params.author }}</p>
         {{ end }}        
         {{ if .Params.date }}
             {{ if .Params.showdate | default true }}
