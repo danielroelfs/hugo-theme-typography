@@ -1,20 +1,22 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
-<div style="height: 3rem;"></div>
-{{ range $k, $v := .Pages.ByPublishDate.Reverse }}
-    {{ if .Date }}
-        {{ if not $k }}
-            <div class="sidenote">{{ .Date.Format "Jan 2006" }}</div>
-        {{ else }}
-            <div class="sidenote">{{ .Date.Format "Jan 2006" }}</div>
+<div class="list-gap"></div>
+<div class="post-list">
+    {{ range $k, $v := .Pages.ByPublishDate.Reverse }}
+        {{ if .Date }}
+            {{ if not $k }}
+                <div class="sidenote">{{ .Date.Format "Jan 2006" }}</div>
+            {{ else }}
+                <div class="sidenote">{{ .Date.Format "Jan 2006" }}</div>
+            {{ end }}
+            {{ else }}
+            {{ if not $k }}
+                <div class="sidenote">no date</div>
+            {{ else }}
+                <div class="sidenote">no date</div>
+            {{ end }}
         {{ end }}
-        {{ else }}
-        {{ if not $k }}
-            <div class="sidenote">no date</div>
-        {{ else }}
-            <div class="sidenote">no date</div>
-        {{ end }}
+        <h3 class="list"><a class="title" href="{{ .Permalink }}">{{ .Title | lower | markdownify }}</a></h3>
     {{ end }}
-    <h3 class="list"><a class="title" href="{{ .Permalink }}">{{ .Title | lower | markdownify }}</a></h3>
-{{ end }}
+</div>
 {{ end }}

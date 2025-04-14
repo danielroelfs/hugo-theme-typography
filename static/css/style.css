@@ -61,11 +61,11 @@ body > * {
 
 @media all and (max-width: 1200px) {
   div#content {
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 3rem 0;
-    }
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem 0;
+  }
 }
 
 #doc {
@@ -148,10 +148,24 @@ h3.list {
   font-size: 75%;
   line-height: 1.25rem;
 }
+@media all and (max-width: 1200px) {
+  .post-list h3.list {
+    line-height: 120%;
+  }
+}
 
 h3.list a {
   flex-grow: 1;
   margin-top: 0 !important;
+}
+
+.list-gap {
+  height: 3rem;
+}
+@media all and (max-width: 1200px) {
+  .list-gap {
+    height: 1rem;
+  }
 }
 
 #doc h1, h2, h3:not(.list) {
@@ -222,6 +236,11 @@ h3.list a {
   #doc .sidenote:has(img) {
     border: none;
     max-width: 30vw;
+  }
+
+  .post-list .sidenote {
+    padding-top: 0.75rem;
+    margin-bottom: 0.25rem;
   }
 }
 
