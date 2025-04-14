@@ -8,8 +8,8 @@
 
 :root {
   --body-font: "source-serif-4", serif;
-  --header-font: "neue-frutiger-world", sans-serif;
-  --header-weight: 900;
+  --header-font: "akzidenz-grotesk-next-pro", sans-serif;
+  --header-weight: 700;
 }
 
 /* General */
@@ -144,7 +144,7 @@ h2.article-title {
 h3.list {
   display: flex;
   flex-wrap: wrap;
-  font-weight: 900;
+  font-weight: var(--header-weight);
   font-size: 75%;
   line-height: 1.25rem;
 }
