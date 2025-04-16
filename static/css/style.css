@@ -508,6 +508,7 @@ details {
 }
 
 details summary {
+  cursor: pointer;
   margin-left: -2rem;
 }
 
