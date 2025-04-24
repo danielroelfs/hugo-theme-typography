@@ -7,9 +7,10 @@
 @media all and (max-width: 480px){html {font-size: 19px;}}
 
 :root {
-  --body-font: "source-serif-4", serif;
-  --header-font: "akzidenz-grotesk-next-pro", sans-serif;
-  --header-weight: 700;
+  --body-font: "Source Serif 4", serif;
+  --header-font: "Cooper Hewitt", sans-serif;
+  --code-font: "Source Code Pro", monospace;
+  --header-weight: 713;
 }
 
 /* General */
@@ -403,7 +404,7 @@ blockquote {
 
 /* Code */
 code {
-  font-family: 'Source Code', monospace;
+  font-family: var(--code-font);
   font-size: 90%;
 }
 
