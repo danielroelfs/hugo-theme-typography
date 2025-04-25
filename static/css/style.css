@@ -41,7 +41,6 @@ body {
 body > * {
   font-family: var(--body-font);
   font-size: 85%;
-  font-weight: 500;
   font-style: normal;
   margin-left: 11rem;
   margin-right: 2.5rem;
