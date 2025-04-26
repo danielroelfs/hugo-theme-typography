@@ -630,6 +630,12 @@ button.btn-theme-switch {
   cursor: pointer;
 }
 
+@media all and (max-width: 1200px) {
+  button.btn-theme-switch {
+    right: 0;
+  }
+}
+
 /* Navbar at the bottom */
 .nav-outer, .nav-inner {
   margin: 0;
