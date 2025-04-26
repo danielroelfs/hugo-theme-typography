@@ -68,6 +68,8 @@ If you want to typeset code, you can do so too:
 raco pollen start . 8081
 ```
 
+Or you can use inline code like this: `import pandas as pd`.
+
 ## Blockquote
 
 {{< sidenote >}}
