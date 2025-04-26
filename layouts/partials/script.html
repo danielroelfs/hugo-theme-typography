@@ -29,7 +29,7 @@
   let isDarkMode = sessionStorage.getItem("darkMode");
 
   if (isDarkMode === null) {
-    isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : 0;
+    isDarkMode = 0;
     sessionStorage.setItem("darkMode", isDarkMode);
   }
 
