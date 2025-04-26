@@ -1,10 +1,3 @@
-<!-- Syntax highlighting -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/{{ .Site.Params.highlightstyle | default "foundation" }}.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-<script>
-  hljs.highlightAll();
-</script>
-
 <!-- Math syntax -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script>
@@ -30,36 +23,45 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 {{ end }}
 
-<!-- Dark mode switch -->
+<!-- Dark mode switch and highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
 <script>
-var isDarkMode = sessionStorage.getItem("darkMode");
+  let isDarkMode = sessionStorage.getItem("darkMode");
 
-if (isDarkMode == null) {
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    isDarkMode = 1;
-  } else {
-    isDarkMode = 0;
+  if (isDarkMode === null) {
+    isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : 0;
+    sessionStorage.setItem("darkMode", isDarkMode);
   }
-}
 
-var x = document.getElementById("btn-theme-toggle");
-if (x !== null) {
-  if (isDarkMode == 1) {
-    x.innerHTML = "read in light mode";
-  } else {
-    x.innerHTML = "read in dark mode";
+  function applyTheme(mode) {
+    const link = document.createElement("link");
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = mode == 1 
+      ? '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/{{ .Site.Params.highlightstyle_dark | default "foundation" }}.min.css'
+      : '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/{{ .Site.Params.highlightstyle_light | default "github-dark-dimmed" }}.min.css';
+
+    document.head.appendChild(link);
+    document.body.classList.toggle('dark-mode', mode == 1);
   }
-}
 
-if (isDarkMode == 1) document.body.classList.add('dark-mode');
-if (isDarkMode == 0) document.body.classList.remove('dark-mode');
+  applyTheme(isDarkMode);
 
-const toggleColorScheme = () => {
-  isDarkMode ^= 1
+  updateButtonLabel(document.getElementById("btn-theme-toggle"), isDarkMode);
 
-  if (isDarkMode == 1) document.body.classList.add('dark-mode');
-  if (isDarkMode == 0) document.body.classList.remove('dark-mode');
+  document.addEventListener('DOMContentLoaded', hljs.highlightAll);
 
-  sessionStorage.setItem("darkMode", isDarkMode);
-}
- </script>
+  function updateButtonLabel(button, mode) {
+    button.innerHTML = mode == 1 ? "read in light mode" : "read in dark mode";
+  }
+
+  function toggleColorScheme() {
+    isDarkMode ^= 1;
+    applyTheme(isDarkMode);
+    updateButtonLabel(document.getElementById("btn-theme-toggle"), isDarkMode);
+    sessionStorage.setItem("darkMode", isDarkMode);
+    hljs.highlightAll()
+  }
+
+  document.getElementById("btn-theme-toggle").onclick = toggleColorScheme;
+</script>
