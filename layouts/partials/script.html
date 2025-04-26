@@ -33,12 +33,9 @@
 <!-- Dark mode switch -->
 <script>
 var isDarkMode = sessionStorage.getItem("darkMode");
-console.log(isDarkMode)
 
 if (isDarkMode == null) {
-  console.log("getting initial variable")
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    console.log("inferring setting")
     isDarkMode = 1;
   } else {
     isDarkMode = 0;
@@ -63,7 +60,6 @@ const toggleColorScheme = () => {
   if (isDarkMode == 1) document.body.classList.add('dark-mode');
   if (isDarkMode == 0) document.body.classList.remove('dark-mode');
 
-  console.log("setting variable")
   sessionStorage.setItem("darkMode", isDarkMode);
 }
  </script>
