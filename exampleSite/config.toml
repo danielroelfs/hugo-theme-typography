@@ -27,10 +27,6 @@ theme = "hugo-theme-typography"
     icon    = "github"                # name of the icon to use, see feathericons.com, tabler.io/icons, simpleicons.org, or fontawesome.com for the full list
     weight  = 1
   [[params.social]]
-    url     = "https://twitter.com/"
-    icon    = "x"
-    weight  = 2
-  [[params.social]]
     url     = "https://instagram.com/"
     icon    = "instagram"
     weight  = 3

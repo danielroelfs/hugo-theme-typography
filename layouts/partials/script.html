@@ -32,18 +32,38 @@
 
 <!-- Dark mode switch -->
 <script>
-let isDarkMode = 0;
-const toggleColorScheme = () => {
-  isDarkMode ^= 1
+var isDarkMode = sessionStorage.getItem("darkMode");
+console.log(isDarkMode)
 
-  if (isDarkMode) document.body.classList.add('dark-mode');
-  else document.body.classList.remove('dark-mode');
+if (isDarkMode == null) {
+  console.log("getting initial variable")
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    console.log("inferring setting")
+    isDarkMode = 1;
+  } else {
+    isDarkMode = 0;
+  }
+}
 
-  var x = document.getElementById("btn-theme-toggle");
-  if (x.innerHTML.includes("dark")) {
+var x = document.getElementById("btn-theme-toggle");
+if (x !== null) {
+  if (isDarkMode == 1) {
     x.innerHTML = "read in light mode";
   } else {
     x.innerHTML = "read in dark mode";
   }
+}
+
+if (isDarkMode == 1) document.body.classList.add('dark-mode');
+if (isDarkMode == 0) document.body.classList.remove('dark-mode');
+
+const toggleColorScheme = () => {
+  isDarkMode ^= 1
+
+  if (isDarkMode == 1) document.body.classList.add('dark-mode');
+  if (isDarkMode == 0) document.body.classList.remove('dark-mode');
+
+  console.log("setting variable")
+  sessionStorage.setItem("darkMode", isDarkMode);
 }
  </script>
