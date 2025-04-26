@@ -1,11 +1,14 @@
 {{ define "main" }}
 {{ if not .Params.hidetopnav | default false }}
     <div class="article-nav-outer">
-        <div class="article-nav-inner">
+        <div class="article-nav-inner-left">
             <a class="internal" hyphens="none" href='/{{ .Site.Params.blogname | default "blog" }}'>← back to {{ .Site.Params.blogname | default "blog" }}</a>
         </div>
     </div>
 {{ end }}
+<div class="theme-switch">
+    <button class="btn-theme-switch" id="btn-theme-toggle" onclick="toggleColorScheme()">toggle dark mode</button>
+</div>
 <h2 class="article-title">{{ .Title | markdownify }}</h2>
 <div id="doc">
     <div class="hanging-subtitle">

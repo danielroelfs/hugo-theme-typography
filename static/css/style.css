@@ -11,6 +11,10 @@
   --header-font: "Cooper Hewitt", sans-serif;
   --code-font: "Source Code Pro", monospace;
   --header-weight: 713;
+  --main-text-color: #333333;
+  --main-text-color-dark: #efefef;
+  --sidenote-color: #666666;
+  --sidenote-color-dark: #bebebe;
 }
 
 /* General */
@@ -26,9 +30,14 @@ body {
   min-height: 100%;
   margin-left: auto;
   margin-right: auto;
-  color: #444;
+  color: var(--main-text-color);
   padding: 0;
   -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body.dark-mode {
+  color: var(--main-text-color-dark);
+  background-color: #333333;
 }
 
 @media all and (max-width: 1200px) {
@@ -60,7 +69,7 @@ body > * {
 }
 
 @media all and (max-width: 1200px) {
-  div#content {
+  #content {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -191,7 +200,11 @@ h3.list a {
 }
 
 #doc > .hanging-subtitle p:first-child {
-  border-top: 3px solid #333;
+  border-top: 3px solid var(--main-text-color);
+}
+
+.dark-mode #doc > .hanging-subtitle p:first-child {
+  border-top: 3px solid var(--main-text-color-dark);
 }
 
 @media all and (max-width: 1200px) {
@@ -218,7 +231,11 @@ h3.list a {
   font-size: 82%; 
   margin-bottom: 1rem;
   line-height: 1.35;
-  color: #666;
+  color: var(--sidenote-color);
+}
+
+.dark-mode .sidenote {
+  color: var(--sidenote-color-dark);
 }
 
 @media all and (max-width: 1200px) {
@@ -245,7 +262,7 @@ h3.list a {
 }
 
 /* Links */
-a {
+a, button {
   opacity: 80%;
   border-radius: 3px;
   text-decoration: none;
@@ -253,13 +270,17 @@ a {
   padding: 2px;
 }
 
-a:hover {
+.dark-mode a, .dark-mode button {
+  opacity: 90%;
+}
+
+a:hover, button:hover {
   opacity: 100%;
   background: rgba(166, 140, 145, 0.5);
   border-radius: 3px;
 }
 
-a, a:hover {
+a, a:hover, button, button:hover {
   transition: background 0.5s;
 }
 
@@ -272,7 +293,7 @@ p a:after, .sidenote a:after  {
   top: -0.10em;
 }
 
-a.internal {
+a.internal, button {
   font-family: var(--header-font);
   font-weight: var(--header-weight);
 }
@@ -305,9 +326,14 @@ img {
 
 figcaption {
   font-size: 70%;
-  color: #666;
+  color: var(--sidenote-color);
   text-align: right;
   margin-right: 2.5%;
+}
+
+.dark-mode 
+figcaption {
+  color: var(--sidenote-color-dark);
 }
 
 iframe {
@@ -431,6 +457,11 @@ mark {
   background-color: rgba(166, 140, 145, 0.25);
 }
 
+.dark-mode mark {
+  background-color: rgba(166, 140, 145, 0.75);
+  color: var(--main-text-color-dark);
+}
+
 .xref {
   text-transform: uppercase;
   font-size: 0.7rem;
@@ -494,7 +525,7 @@ a.xref:after {
 
 .stand-out-paragraph {
   border-radius: 5px;
-  background-color: #EBEBEB;
+  background-color: rgba(166, 140, 145, 0.5);
   padding: 1em;
 }
 
@@ -518,7 +549,11 @@ details summary {
   padding: 0;
   left: 2rem;
   width: 38rem;
-  border-bottom: 0.2rem solid #444;
+  border-bottom: 0.2rem solid var(--main-text-color);
+}
+
+.dark-mode #top-stripe {
+  border-bottom: 0.2rem solid var(--main-text-color-dark);
 }
 
 @media all and (max-width: 1200px) {
@@ -536,6 +571,10 @@ kbd {
   padding: 1px 2px;
 }
 
+.dark-mode kbd {
+  background-color: #444444;
+}
+
 /* Back button at the top of articles */
 .article-nav-outer {
   position: absolute;
@@ -544,7 +583,7 @@ kbd {
   margin-top: -2.81rem;
 }
 
-.article-nav-inner {
+.article-nav-inner-left {
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -563,7 +602,8 @@ kbd {
   }
 }
 
-.article-nav-inner a.internal {
+.article-nav-inner-left a.internal,
+button.btn-theme-switch {
   display: block;
   font-size: 75%;
   text-align: center;
@@ -573,10 +613,21 @@ kbd {
   padding-right: 0.3rem;
 }
 
-.article-nav-inner a.internal:hover {
+.article-nav-inner-left a.internal:hover,
+button.btn-theme-switch:hover {
   background-color: rgba(166, 140, 145, 0.5);
   transition: opacity 0.5s;
   border-radius: 0;
+}
+
+/* Dark mode switch */
+button.btn-theme-switch {
+  background: none;
+  position: absolute;
+  display: block;
+  right: 1.66rem;
+  margin-top: -2.81rem;
+  cursor: pointer;
 }
 
 /* Navbar at the bottom */
@@ -603,7 +654,11 @@ kbd {
   bottom: 0;
   width: 38rem;
   opacity: 0.95;
-  border-top: 0.2rem solid #444;
+  border-top: 0.2rem solid var(--main-text-color);
+}
+
+.dark-mode .nav-inner {
+  border-top: 0.2rem solid var(--main-text-color-dark);
 }
 
 @media all and (max-width: 1200px) {

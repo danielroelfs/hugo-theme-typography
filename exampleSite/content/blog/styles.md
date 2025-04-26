@@ -80,7 +80,7 @@ Quam elementum pulvinar etiam non quam lacus. Elit eget gravida cum sociis natoq
 This is a stand-out paragraph
 {{< /sidenote >}}
 
-{{< standout bg="#CCCCCC" >}}
+{{< standout >}}
 Potenti nullam ac tortor vitae purus faucibus ornare suspendisse. Tincidunt eget nullam non nisi est. Amet porttitor eget dolor morbi. Diam quam nulla porttitor massa id neque aliquam. Sed felis eget velit aliquet sagittis id consectetur purus.
 {{< /standout >}}
 
