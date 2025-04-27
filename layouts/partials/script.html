@@ -60,7 +60,8 @@
     applyTheme(isDarkMode);
     updateButtonLabel(document.getElementById("btn-theme-toggle"), isDarkMode);
     sessionStorage.setItem("darkMode", isDarkMode);
-    hljs.highlightAll()
+    hljs.highlightAll();
+    window.location.reload();
   }
 
   document.getElementById("btn-theme-toggle").onclick = toggleColorScheme;
