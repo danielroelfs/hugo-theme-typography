@@ -604,29 +604,28 @@ kbd {
 
 .article-nav-inner-left a.internal,
 button.btn-theme-switch {
-  display: block;
   font-size: 75%;
-  text-align: center;
-  box-sizing: content-box;
-  padding: 0.2rem;
-  padding-top: 0.4rem;
-  padding-right: 0.3rem;
+  padding: 0.4rem 0.3rem 0.2rem 0.2rem;
+  border-radius: 0;
 }
 
 .article-nav-inner-left a.internal:hover,
 button.btn-theme-switch:hover {
   background-color: rgba(166, 140, 145, 0.5);
   transition: opacity 0.5s;
-  border-radius: 0;
 }
 
 /* Dark mode switch */
 button.btn-theme-switch {
   background: none;
   position: absolute;
-  display: block;
   right: 1.66rem;
   margin-top: -2.81rem;
+  cursor: pointer;
+  padding-left: 7px;
+}
+
+button.btn-theme-switch i {
   cursor: pointer;
 }
 

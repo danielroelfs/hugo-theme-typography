@@ -52,7 +52,14 @@
   document.addEventListener('DOMContentLoaded', hljs.highlightAll);
 
   function updateButtonLabel(button, mode) {
-    button.innerHTML = mode == 1 ? button.innerHTML.replace(/dark/g, "light") : button.innerHTML.replace(/light/g, "dark");
+    const icon = button.querySelector('.theme-switch-icon');
+
+    if (mode == 1) {
+        icon.setAttribute('data-feather', 'sun');
+    } else {
+        icon.setAttribute('data-feather', 'moon');
+    }
+    feather.replace();
   }
 
   function toggleColorScheme() {

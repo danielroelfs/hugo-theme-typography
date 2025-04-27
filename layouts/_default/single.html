@@ -8,7 +8,9 @@
 {{ end }}
 {{ if .Site.Params.enable_theme_toggle | default true }}
     <div class="theme-switch">
-        <button class="btn-theme-switch" id="btn-theme-toggle" data-umami-event="Toggle mode (single page)" onclick="toggleColorScheme()">read in dark mode</button>
+        <button class="btn-theme-switch" id="btn-theme-toggle" data-umami-event="Toggle mode (single page)" onclick="toggleColorScheme()">
+            <i class="theme-switch-icon" data-feather="sun"></i>
+        </button>
     </div>
 {{ end }}
 <h2 class="article-title">{{ .Title | markdownify }}</h2>

@@ -2,7 +2,7 @@
 {{ if .Site.Params.enable_theme_toggle | default true }}
     <div class="theme-switch">
         <button class="btn-theme-switch" id="btn-theme-toggle" data-umami-event="Toggle mode (index)" onclick="toggleColorScheme()">
-            dark mode
+            <i class="theme-switch-icon" data-feather="sun"></i>
         </button>
     </div>
 {{ end }}

@@ -1,7 +1,9 @@
 {{ define "main" }}
 {{ if .Site.Params.enable_theme_toggle | default true }}
     <div class="theme-switch">
-        <button class="btn-theme-switch" id="btn-theme-toggle" data-umami-event="Toggle mode (list)" onclick="toggleColorScheme()">dark mode</button>
+        <button class="btn-theme-switch" id="btn-theme-toggle" data-umami-event="Toggle mode (list)" onclick="toggleColorScheme()">
+            <i class="theme-switch-icon" data-feather="sun"></i>
+        </button>
     </div>
 {{ end }}
 <h1>{{ .Title }}</h1>
