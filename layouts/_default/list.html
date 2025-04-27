@@ -1,7 +1,9 @@
 {{ define "main" }}
-<div class="theme-switch">
-    <button class="btn-theme-switch" id="btn-theme-toggle" onclick="toggleColorScheme()">dark mode</button>
-</div>
+{{ if .Site.Params.enable_theme_toggle | default true }}
+    <div class="theme-switch">
+        <button class="btn-theme-switch" id="btn-theme-toggle" onclick="toggleColorScheme()">dark mode</button>
+    </div>
+{{ end }}
 <h1>{{ .Title }}</h1>
 <div class="list-gap"></div>
 <div class="post-list">

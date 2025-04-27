@@ -6,9 +6,11 @@
         </div>
     </div>
 {{ end }}
-<div class="theme-switch">
-    <button class="btn-theme-switch" id="btn-theme-toggle" onclick="toggleColorScheme()">read in dark mode</button>
-</div>
+{{ if .Site.Params.enable_theme_toggle | default true }}
+    <div class="theme-switch">
+        <button class="btn-theme-switch" id="btn-theme-toggle" onclick="toggleColorScheme()">read in dark mode</button>
+    </div>
+{{ end }}
 <h2 class="article-title">{{ .Title | markdownify }}</h2>
 <div id="doc">
     <div class="hanging-subtitle">
