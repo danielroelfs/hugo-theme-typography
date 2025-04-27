@@ -11,7 +11,7 @@ theme = "hugo-theme-typography"
 
   favicon   = "favicon.png"
 
-  highlightstyle_light  = "foundation" # Style for highlight.js in light mode
+  highlightstyle_light  = "routeros" # Style for highlight.js in light mode
   highlightstyle_dark  = "rainbow" # Style for highlight.js in dark mode
 
   iconsource  = "feather" # source of the icon font (defaults to feather, options: feather, tabler, simple-icons, fontawesome)
