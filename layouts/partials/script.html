@@ -38,8 +38,8 @@
     link.type = "text/css";
     link.rel = "stylesheet";
     link.href = mode == 1 
-      ? '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/{{ .Site.Params.highlightstyle_dark | default "foundation" }}.min.css'
-      : '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/{{ .Site.Params.highlightstyle_light | default "rainbow" }}.min.css';
+      ? '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/{{ .Site.Params.highlightstyle_dark | default "rainbow" }}.min.css'
+      : '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/{{ .Site.Params.highlightstyle_light | default "routeros" }}.min.css';
 
     document.head.appendChild(link);
     document.body.classList.toggle('dark-mode', mode == 1);
@@ -52,7 +52,7 @@
   document.addEventListener('DOMContentLoaded', hljs.highlightAll);
 
   function updateButtonLabel(button, mode) {
-    button.innerHTML = mode == 1 ? "read in light mode" : "read in dark mode";
+    button.innerHTML = mode == 1 ? button.innerHTML.replace(/dark/g, "light") : button.innerHTML.replace(/light/g, "dark");
   }
 
   function toggleColorScheme() {
@@ -61,7 +61,6 @@
     updateButtonLabel(document.getElementById("btn-theme-toggle"), isDarkMode);
     sessionStorage.setItem("darkMode", isDarkMode);
     hljs.highlightAll();
-    window.location.reload();
   }
 
   document.getElementById("btn-theme-toggle").onclick = toggleColorScheme;

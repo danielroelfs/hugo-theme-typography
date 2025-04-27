@@ -1,4 +1,7 @@
 {{ define "main" }}
+<div class="theme-switch">
+    <button class="btn-theme-switch" id="btn-theme-toggle" onclick="toggleColorScheme()">dark mode</button>
+</div>
 <h1 class="title">{{ .Title | markdownify }}</h1>
 <div style="height: 2rem;"></div>
 {{ if .Site.Params.intro }}
