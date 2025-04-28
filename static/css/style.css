@@ -631,7 +631,7 @@ button.btn-theme-switch {
   }
 }
 
-@media all and (min-width: 1600px) {
+@media all and (min-width: 1601px) {
   button.btn-theme-switch {
     right: 3.47rem;
   }
