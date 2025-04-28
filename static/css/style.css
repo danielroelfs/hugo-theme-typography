@@ -625,14 +625,20 @@ button.btn-theme-switch {
   padding-left: 7px;
 }
 
-button.btn-theme-switch i {
-  cursor: pointer;
-}
-
 @media all and (max-width: 1200px) {
   button.btn-theme-switch {
     right: 0;
   }
+}
+
+@media all and (min-width: 1600px) {
+  button.btn-theme-switch {
+    right: 3.47rem;
+  }
+}
+
+button.btn-theme-switch i {
+  cursor: pointer;
 }
 
 /* Navbar at the bottom */
