@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      HUGO_VERSION: 0.116.1
+      HUGO_VERSION: 0.140.2
 
     steps:
       - name: 🛎 Check out repo
@@ -38,7 +38,7 @@ jobs:
           cd exampleSite
           hugo --themesDir ../.. -d ../docs/ --logLevel info -b ./
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-build
           path: ./docs

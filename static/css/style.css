@@ -6,6 +6,17 @@
 @media all and (max-width: 600px){html {font-size: 20px;}}
 @media all and (max-width: 480px){html {font-size: 19px;}}
 
+:root {
+  --body-font: "Source Serif 4", serif;
+  --header-font: "Cooper Hewitt", sans-serif;
+  --code-font: "Source Code Pro", monospace;
+  --header-weight: 713;
+  --main-text-color: #333333;
+  --main-text-color-dark: #efefef;
+  --sidenote-color: #666666;
+  --sidenote-color-dark: #bebebe;
+}
+
 /* General */
 html {
   height: 100%;
@@ -19,21 +30,26 @@ body {
   min-height: 100%;
   margin-left: auto;
   margin-right: auto;
-  color: #444;
+  color: var(--main-text-color);
   padding: 0;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
+body.dark-mode {
+  color: var(--main-text-color-dark);
+  background-color: #333333;
+}
+
 @media all and (max-width: 1200px) {
   body {
+    min-width: auto;
     max-width: 100vw;
   }
 }
 
 body > * {
-  font-family: "source-serif-4", serif;
+  font-family: var(--body-font);
   font-size: 85%;
-  font-weight: 500;
   font-style: normal;
   margin-left: 11rem;
   margin-right: 2.5rem;
@@ -49,16 +65,16 @@ body > * {
 
 #content {
   width: 29rem;
-  padding: 3rem 0;
+  padding: 3rem 0 4rem 0;
 }
 
 @media all and (max-width: 1200px) {
-  div#content {
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 3rem 0;
-    }
+  #content {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem 0;
+  }
 }
 
 #doc {
@@ -72,37 +88,51 @@ p {
 
 /* Headers */
 h1, h2, h3 {
-  font-family: 'Cooper Hewitt', sans-serif;
-  font-weight: 711;
-  font-variant-caps: all-small-caps;
+  font-family: var(--header-font);
+  font-weight: var(--header-weight);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 115%;
+}
+
+h3 {
+  font-size: 90%;
 }
 
 h4, h5, h6 {
-  font-weight: 711;
-  font-size: 80%;
+  font-weight: var(--header-weight);
+  font-size: 95%;
+}
+
+h4 {
+  font-size: 100%;
 }
 
 h5 {
-  font-weight: normal;
+  font-weight: 600;
 }
 
 h6 {
-  font-weight: normal;
+  font-weight: 600;
   font-style: italic;
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 711;
+  font-size: 1.8rem;
+  font-weight: var(--header-weight);
   line-height: 1.1;
 }
 
-h2 {
-  font-weight: 711;
+@media all and (max-width: 1200px) {
+  h1 {
+    font-size: 1.5rem
+  }
 }
 
 h2.article-title {
-  font-weight: 711;
+  font-weight: var(--header-weight);
   text-transform: uppercase;
   font-variant-caps: normal;
   line-height: 1.1;
@@ -112,15 +142,51 @@ h2.article-title {
   margin-bottom: 4rem;
 }
 
-h3.list {
-  font-weight: 711;
-  margin-top: 0.5rem;
+@media all and (max-width: 1200px) {
+  h2.article-title {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
 }
 
-#doc h1, h2, h3 {
-  font-weight: 711;
+h3.list {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: var(--header-weight);
+  font-size: 75%;
+  line-height: 1.25rem;
+}
+@media all and (max-width: 1200px) {
+  .post-list h3.list {
+    line-height: 120%;
+  }
+}
+
+h3.list a {
+  flex-grow: 1;
+  margin-top: 0 !important;
+}
+
+.list-gap {
+  height: 3rem;
+}
+@media all and (max-width: 1200px) {
+  .list-gap {
+    height: 1rem;
+  }
+}
+
+#doc h1, h2, h3:not(.list) {
+  font-weight: var(--header-weight);
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
+}
+
+@media all and (max-width: 1200px) {
+  #doc h1, h2, h3 {
+    font-size: 1.2rem
+  }
 }
 
 /* Annotations */
@@ -130,10 +196,15 @@ h3.list {
   width: 7rem;
   float: left;
   text-align: right;
+  margin-top: 0.2rem;
 }
 
 #doc > .hanging-subtitle p:first-child {
-  border-top: 3px solid #333;
+  border-top: 3px solid var(--main-text-color);
+}
+
+.dark-mode #doc > .hanging-subtitle p:first-child {
+  border-top: 3px solid var(--main-text-color-dark);
 }
 
 @media all and (max-width: 1200px) {
@@ -150,7 +221,7 @@ h3.list {
 
 .hanging-subtitle p {
   font-style: normal;
-  font-weight: 711;
+  font-weight: 900;
   font-size: 95%;
   line-height: 1.2;
   margin-top: 0.25rem;
@@ -160,7 +231,11 @@ h3.list {
   font-size: 82%; 
   margin-bottom: 1rem;
   line-height: 1.35;
-  color: #666;
+  color: var(--sidenote-color);
+}
+
+.dark-mode .sidenote {
+  color: var(--sidenote-color-dark);
 }
 
 @media all and (max-width: 1200px) {
@@ -170,7 +245,7 @@ h3.list {
   }
 
   #doc .sidenote {
-    padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.75rem !important;
     border: 1px dashed grey;
     border-radius: 5px;
   }
@@ -179,10 +254,15 @@ h3.list {
     border: none;
     max-width: 30vw;
   }
+
+  .post-list .sidenote {
+    padding-top: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
 }
 
 /* Links */
-a {
+a, button {
   opacity: 80%;
   border-radius: 3px;
   text-decoration: none;
@@ -190,13 +270,17 @@ a {
   padding: 2px;
 }
 
-a:hover {
+.dark-mode a, .dark-mode button {
+  opacity: 90%;
+}
+
+a:hover, button:hover {
   opacity: 100%;
   background: rgba(166, 140, 145, 0.5);
   border-radius: 3px;
 }
 
-a, a:hover {
+a, a:hover, button, button:hover {
   transition: background 0.5s;
 }
 
@@ -209,9 +293,13 @@ p a:after, .sidenote a:after  {
   top: -0.10em;
 }
 
-a.internal {
-  font-family: 'Cooper Hewitt', sans-serif;
-  font-weight: 711;
+a.internal, button {
+  font-family: var(--header-font);
+  font-weight: var(--header-weight);
+}
+
+.social-icons {
+  margin-top: 0.2rem;
 }
 
 .social-icons a:hover {
@@ -238,9 +326,14 @@ img {
 
 figcaption {
   font-size: 70%;
-  color: #666;
+  color: var(--sidenote-color);
   text-align: right;
   margin-right: 2.5%;
+}
+
+.dark-mode 
+figcaption {
+  color: var(--sidenote-color-dark);
 }
 
 iframe {
@@ -309,11 +402,11 @@ td {
 }
 
 th {
-  font-family: 'Cooper Hewitt', sans-serif;
-  font-weight: 711;
-  font-size: 115%;
-  font-variant-caps: all-small-caps;
-  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  font-family: var(--header-font);
+  font-weight: var(--header-weight);
+  font-size: 80%;
+  text-transform: uppercase;
+  padding: 0.3rem 0.5rem 0.3rem 0.25rem;
   line-height: 1.05;
   border-bottom: 1px solid #808080;
 }
@@ -336,7 +429,7 @@ blockquote {
 
 /* Code */
 code {
-  font-family: 'Source Code', monospace;
+  font-family: var(--code-font);
   font-size: 90%;
 }
 
@@ -351,6 +444,10 @@ pre code {
 }
 
 /* Decorations */
+.lowercase {
+  text-transform: lowercase;
+}
+
 .center {
   margin: auto;
   text-align: center;
@@ -360,11 +457,25 @@ mark {
   background-color: rgba(166, 140, 145, 0.25);
 }
 
+.dark-mode mark {
+  background-color: rgba(166, 140, 145, 0.75);
+  color: var(--main-text-color-dark);
+}
+
+.xref {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+a.xref:after {
+  content: none;
+}
+
 .signature {
   display: block;
   margin-top: 1.5rem;
   text-align: right;
-  font-variant-caps: all-small-caps;
+  text-transform: lowercase;
 }
 
 .signature:before {
@@ -402,13 +513,20 @@ mark {
 }
 
 .os {
-  font-family: 'Cooper Hewitt', sans-serif;
-  font-weight: 711;
-  font-variant-caps: all-small-caps;
+  font-family: var(--header-font);
+  font-weight: var(--header-weight);
+  text-transform: uppercase;
+  font-size: 80%;
 }
 
 .os:after {
   content: " | ";
+}
+
+.stand-out-paragraph {
+  border-radius: 5px;
+  background-color: rgba(166, 140, 145, 0.5);
+  padding: 1em;
 }
 
 .intro-text {
@@ -421,6 +539,7 @@ details {
 }
 
 details summary {
+  cursor: pointer;
   margin-left: -2rem;
 }
 
@@ -430,7 +549,11 @@ details summary {
   padding: 0;
   left: 2rem;
   width: 38rem;
-  border-bottom: 0.2rem solid #444;
+  border-bottom: 0.2rem solid var(--main-text-color);
+}
+
+.dark-mode #top-stripe {
+  border-bottom: 0.2rem solid var(--main-text-color-dark);
 }
 
 @media all and (max-width: 1200px) {
@@ -448,6 +571,10 @@ kbd {
   padding: 1px 2px;
 }
 
+.dark-mode kbd {
+  background-color: #444444;
+}
+
 /* Back button at the top of articles */
 .article-nav-outer {
   position: absolute;
@@ -456,7 +583,7 @@ kbd {
   margin-top: -2.81rem;
 }
 
-.article-nav-inner {
+.article-nav-inner-left {
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -467,21 +594,51 @@ kbd {
   opacity: 0.9;
 }
 
-.article-nav-inner a.internal {
-  display: block;
-  font-size: 75%;
-  text-transform: uppercase;
-  text-align: center;
-  box-sizing: content-box;
-  padding: 0.2rem;
-  padding-top: 0.4rem;
-  padding-right: 0.3rem;
+@media all and (max-width: 1200px) {
+  .article-nav-outer {
+    width: 90vw;
+    left: 0;
+    margin-left: 0;
+  }
 }
 
-.article-nav-inner a.internal:hover {
+.article-nav-inner-left a.internal,
+button.btn-theme-switch {
+  font-size: 75%;
+  padding: 0.4rem 0.3rem 0.2rem 0.2rem;
+  border-radius: 0;
+}
+
+.article-nav-inner-left a.internal:hover,
+button.btn-theme-switch:hover {
   background-color: rgba(166, 140, 145, 0.5);
   transition: opacity 0.5s;
-  border-radius: 0;
+}
+
+/* Dark mode switch */
+button.btn-theme-switch {
+  background: none;
+  position: absolute;
+  right: 1.66rem;
+  margin-top: -2.81rem;
+  cursor: pointer;
+  padding-left: 7px;
+}
+
+@media all and (max-width: 1200px) {
+  button.btn-theme-switch {
+    right: 0;
+  }
+}
+
+@media all and (min-width: 1601px) {
+  button.btn-theme-switch {
+    right: 3.47rem;
+  }
+}
+
+button.btn-theme-switch i {
+  cursor: pointer;
 }
 
 /* Navbar at the bottom */
@@ -508,7 +665,11 @@ kbd {
   bottom: 0;
   width: 38rem;
   opacity: 0.95;
-  border-top: 0.2rem solid #444;
+  border-top: 0.2rem solid var(--main-text-color);
+}
+
+.dark-mode .nav-inner {
+  border-top: 0.2rem solid var(--main-text-color-dark);
 }
 
 @media all and (max-width: 1200px) {
@@ -522,15 +683,14 @@ kbd {
 .nav-flex {
   width: 100%;
   text-align: center;
-  font-size: 3.5rem;
-  font-weight: 711;
+  font-weight: var(--header-weight);
 }
 
 .nav-inner a.internal {
   display: block;
   height: 2rem;
   width: 100%;
-  font-size: 75%;
+  font-size: 80%;
   text-transform: uppercase;
   text-align: center;
   box-sizing: content-box;

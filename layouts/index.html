@@ -1,4 +1,11 @@
 {{ define "main" }}
+{{ if .Site.Params.enable_theme_toggle | default true }}
+    <div class="theme-switch">
+        <button class="btn-theme-switch" id="btn-theme-toggle" data-umami-event="Toggle mode (index)" onclick="toggleColorScheme()">
+            <i class="theme-switch-icon" data-feather="moon"></i>
+        </button>
+    </div>
+{{ end }}
 <h1 class="title">{{ .Title | markdownify }}</h1>
 <div style="height: 2rem;"></div>
 {{ if .Site.Params.intro }}
@@ -8,7 +15,7 @@
     <p class="intro-text">{{ .Site.Params.intro | markdownify }}</p>
     <div style="height: 2.5rem;"></div>
 {{ end }}
-<div class="sidenote" style="margin-top: 0.5rem;">pages</div>
+<div class="sidenote">pages</div>
 {{ with .Site.Menus.main }}
     {{ range sort . "Weight" }}
         {{ if ne .Name "Home" }}
@@ -18,8 +25,16 @@
 {{ end }}
 <div style="height: 2.5rem;"></div>
 <div class="sidenote">socials</div>
-<div class="social-icons" style="margin-top: 0.5rem;">
-    {{ if eq .Site.Params.iconsource "simple-icons" }}
+<div class="social-icons">
+    {{ if eq .Site.Params.iconsource "tabler" }}
+        {{ with .Site.Params.social }}
+            {{ range sort . "weight" }}
+                <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
+                    <i class="ti ti-{{ .icon }}" style="font-size: 1.1rem; margin-right: 0.5rem;"></i>
+                </a>
+            {{ end }}
+        {{ end }}
+    {{ else if eq .Site.Params.iconsource "simple-icons" }}
         {{ with .Site.Params.social }}
             {{ range sort . "weight" }}
                 <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
@@ -31,7 +46,7 @@
         {{ with .Site.Params.social }}
             {{ range sort . "weight" }}
                 <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
-                    <i class="{{ .icon }}"></i>
+                    <i class="{{ .icon }}" style="font-size: 1.1rem; margin-right: 0.5rem;"></i>
                 </a>
             {{ end }}
         {{ end }}

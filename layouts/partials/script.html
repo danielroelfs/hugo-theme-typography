@@ -1,13 +1,12 @@
-<!-- Syntax highlighting -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/foundation.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-<script>
-  hljs.highlightAll();
-</script>
-
 <!-- Math syntax -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+  MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'] ]
+      }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons"></script>
@@ -15,6 +14,60 @@
   feather.replace()
 </script>
 
+{{ if eq .Site.Params.iconsource "tabler" }}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+{{ end }}
+
 {{ if eq .Site.Params.iconsource "fontawesome" }}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-{{ end}}
+{{ end }}
+
+<!-- Dark mode switch and highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>
+  let isDarkMode = sessionStorage.getItem("darkMode");
+
+  if (isDarkMode === null) {
+    isDarkMode = 0;
+    sessionStorage.setItem("darkMode", isDarkMode);
+  }
+
+  function applyTheme(mode) {
+    const link = document.createElement("link");
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = mode == 1 
+      ? '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/{{ .Site.Params.highlightstyle_dark | default "rainbow" }}.min.css'
+      : '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/{{ .Site.Params.highlightstyle_light | default "routeros" }}.min.css';
+
+    document.head.appendChild(link);
+    document.body.classList.toggle('dark-mode', mode == 1);
+  }
+
+  applyTheme(isDarkMode);
+
+  updateButtonLabel(document.getElementById("btn-theme-toggle"), isDarkMode);
+
+  document.addEventListener('DOMContentLoaded', hljs.highlightAll);
+
+  function updateButtonLabel(button, mode) {
+    const icon = button.querySelector('.theme-switch-icon');
+
+    if (mode == 1) {
+        icon.setAttribute('data-feather', 'sun');
+    } else {
+        icon.setAttribute('data-feather', 'moon');
+    }
+    feather.replace();
+  }
+
+  function toggleColorScheme() {
+    isDarkMode ^= 1;
+    applyTheme(isDarkMode);
+    updateButtonLabel(document.getElementById("btn-theme-toggle"), isDarkMode);
+    sessionStorage.setItem("darkMode", isDarkMode);
+    hljs.highlightAll();
+  }
+
+  document.getElementById("btn-theme-toggle").onclick = toggleColorScheme;
+</script>

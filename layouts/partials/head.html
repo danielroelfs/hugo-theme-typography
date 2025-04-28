@@ -6,6 +6,8 @@
     <meta name="description" content="{{ if .IsPage }}{{ .Site.BaseURL }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
 
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    
     <meta property="og:site_name" content="{{ .Site.Title }}">
     <meta property="og:title" content="{{ block "og-title" . }}{{ .Site.Title }}{{ end }}">
     <meta property="og:description" content="{{ if .IsPage }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
@@ -25,10 +27,10 @@
         <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
     {{ end }}
 
-    <link rel="stylesheet" href="https://use.typekit.net/jxt2fnp.css"> <!-- Source Serif 4-->
-    <link rel="stylesheet" href="https://use.typekit.net/uwd7war.css"> <!-- Source Code -->
-    <link href="https://fonts.cdnfonts.com/css/cooper-hewitt" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet"> <!-- Source Serif 4 -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"> <!-- Source Code Pro -->
+    <link href="https://fonts.cdnfonts.com/css/cooper-hewitt" rel="stylesheet" > <!-- Cooper Hewitt -->
+
     {{ if .Site.Params.description }}
         <meta name="description" content="{{ .Site.Params.description }}">
     {{ end }}
@@ -39,8 +41,8 @@
         {{ end }}
     {{ end }}
 
-    {{ if and .Site.Params.umami (not .Site.IsServer) }}
-        <script async src="{{ .Site.Params.umamilink }}" data-website-id="{{ .Site.Params.umamiid }}"></script>
+    {{ if and (.Site.Params.umami) (not hugo.IsServer) }}
+        <script async src="{{ .Site.Params.umamilink }}" data-website-id="{{ .Site.Params.umamiid }}" data-do-not-track="true"></script>
     {{ end }}
     
     {{ $title := print .Title " | " .Site.Title }}
